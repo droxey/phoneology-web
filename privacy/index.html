@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
   <title>Privacy — Phoneology</title>
   <link rel="canonical" href="https://phoneology.app/privacy">
   <link rel="stylesheet" href="/assets/styles.css">
@@ -23,12 +22,24 @@
     <article class="article">
       <div class="article-header">
         <h1>Privacy</h1>
-
+        <div class="holding-notice"><p><strong>Development version.</strong> This page describes Phoneology’s current development build. It will be reviewed before the app is released.</p></div>
 
       </div>
-      <div class="holding-notice"><p><strong>Privacy policy not published.</strong> Phoneology is in development. This page is a holding notice.</p></div>
-      <p>Approved privacy policy will be available here before release.</p>
-      <p>Visit the <a href="/support">support guide</a> for information about the current development build.</p>
+      <p>Muse &amp; Machine LLC develops Phoneology. This policy describes the app’s current development build and this website.</p>
+      <h2>Readings and information you enter</h2>
+      <p>Phoneology calculates phone-number readings on your device and does not read your contacts. You may also enter a birthdate for a separate Life Path calculation. That birthdate is stored in local app preferences and can be cleared.</p>
+      <p>Private mode is on by default and prevents new History saves. Turning it on does not remove readings already saved. Saved readings are stored locally using Apple’s Core Data framework.</p>
+      <h2>Optional iCloud sync</h2>
+      <p>Sync is off by default and requires you to turn it on. A change takes effect on the next app launch. When enabled, the app uses Apple’s iCloud services for supported saved data, including a saved phone number and timestamp. Cross-device behavior is still being verified during development.</p>
+      <p>Turning sync off retains existing local and remote copies; it does not erase data on other devices. Phoneology has no developer-operated backend. Local deletion does not guarantee complete cloud erasure or recovery.</p>
+      <h2>Diagnostics and this website</h2>
+      <p>The app uses Apple’s OSLog and MetricKit for first-party diagnostics. Diagnostic behavior, any Apple transmission, retention, and release privacy disclosures are being reviewed before launch.</p>
+      <p>This website is hosted on GitHub Pages. Its source is static and contains no analytics scripts or external automatic resources. GitHub processes network request information to deliver the site and logs visitors’ IP addresses for security.</p>
+      <p>We have not verified a specific retention period for GitHub’s request data. App diagnostic handling and hosting disclosures will be reviewed before the app is released.</p>
+      <h2>Removing your information</h2>
+      <p>You can delete saved readings, clear your birthdate, or use Settings → Delete all data → Delete to clear accessible local saved readings, birthdate and preferences, and drafts and previews. The operation can be blocked during an active sync operation, when a store cannot be accessed, or when permission is denied.</p>
+      <p>With sync enabled, deletions may propagate to iCloud or remote records may be imported later. A session connected to sync does not itself mean a sync operation is running. Local deletion does not remove exports, backups, or App Store purchases, and does not guarantee removal of every remote copy.</p>
+      <p>See <a href="/delete-data">Delete data</a> for the current controls and their limits.</p>
     </article>
   </main>
   <footer class="site-footer shell">

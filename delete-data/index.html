@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
   <title>Delete data — Phoneology</title>
   <link rel="canonical" href="https://phoneology.app/delete-data">
   <link rel="stylesheet" href="/assets/styles.css">
@@ -23,12 +22,22 @@
     <article class="article">
       <div class="article-header">
         <h1>Delete data</h1>
-
+        <div class="holding-notice"><p><strong>Development version.</strong> This page describes Phoneology’s current development build. It will be reviewed before the app is released.</p></div>
 
       </div>
-      <div class="holding-notice"><p><strong>Data deletion guidance not published.</strong> Phoneology is in development. This page is a holding notice.</p></div>
-      <p>Approved data deletion guidance will be available here before release.</p>
-      <p>Visit the <a href="/support">support guide</a> for information about the current development build.</p>
+      <p>Phoneology’s current build stores app data on your device, with optional iCloud sync. Use the controls below to remove data from the app.</p>
+      <h2>Delete a saved reading</h2>
+      <p>Delete the reading from History. Private mode prevents new History saves; it does not delete existing readings.</p>
+      <h2>Clear your birthdate</h2>
+      <p>Clear the optional birthdate in Settings to remove it from local preferences.</p>
+      <h2>Delete current local app data</h2>
+      <p>Open <strong>Settings → Delete all data → Delete</strong>. Read the in-app confirmation before continuing. This clears accessible saved readings, the birthdate and preferences, and local drafts and previews.</p>
+      <p>Deletion is blocked while an active sync operation is in progress. A session attached to sync is not, by itself, an active operation. Deletion can also fail when a store cannot be accessed or permission is denied.</p>
+      <h2>Understand the limits</h2>
+      <p>With sync enabled, deletion may propagate to iCloud, or remote records may be imported later. Turning sync off takes effect on the next app launch, retains existing copies, and does not erase other devices. Local deletion does not guarantee complete cloud erasure or recovery.</p>
+      <p>App Store purchases, backups, and files you exported are unchanged. Remove those copies separately where the relevant service provides that control.</p>
+      <h2>About account deletion</h2>
+      <p>Phoneology does not provide a separate developer account or a developer-operated account database to delete. Your Apple Account and iCloud are managed by Apple.</p>
     </article>
   </main>
   <footer class="site-footer shell">
