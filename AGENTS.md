@@ -6,7 +6,7 @@ Read the task files before editing. Keep changes small and verify affected pages
 
 - Read requested files, direct dependencies, and relevant checks. Avoid repository and archive crawls.
 - This repository is plain HTML with shared CSS in `assets/styles.css`. Content lives in `index.html`, `support/index.html`, `privacy/index.html`, `terms/index.html`, and `delete-data/index.html`; `404.html` is the error page. There is no framework, build command, or automated test suite.
-- Read access to the separate Phoneology app repository at `../phoneology` or `https://github.com/droxey/phoneology` is always authorized whenever needed, subject to tool and security boundaries. Read its applicable guidance and relevant implementation before making app-behavior claims. Website text does not prove current iOS behavior. App edits require separate authorization.
+- Read access to the separate Phoneology app repository at `/Users/droxey/dev/repos/phoneology` or `https://github.com/droxey/phoneology` (`../phoneology` only when that sibling exists) is always authorized whenever needed, subject to tool and security boundaries. Read its applicable guidance and relevant implementation before making app-behavior claims. Website text does not prove current iOS behavior. App edits require separate authorization.
 - Use a descriptive `feat/` or `fix/` branch. Preserve other contributors’ changes. Stop after three failed repairs and name the conflict or doubtful assumption. Never poll or sleep for changes.
 
 ## 2. Keep pages accessible
@@ -14,7 +14,7 @@ Read the task files before editing. Keep changes small and verify affected pages
 - Reuse existing HTML structure and CSS variables. Keep shared styling in `assets/styles.css`; add dependencies or tooling only when the task requires them.
 - Preserve semantic headings, labeled navigation, the skip link, visible keyboard focus, contrast, and responsive layout. Set `aria-current="page"` on the current page’s navigation link.
 - Check shared header and footer links on affected pages, including `404.html`. Use root-relative internal URLs and trailing slashes for directory routes. Preserve each content page’s canonical URL under `https://phoneology.app/`.
-- Support privacy, terms, deletion, support, and release-status claims with evidence. Read the app repository when needed; report unverified behavior.
+- Support privacy, terms, deletion, support, and release-status claims with evidence. Read the app repository when needed; distinguish source implementation, device-verified behavior, and planned features. Report unverified behavior. Change policy revision dates only for substantive policy changes.
 
 ## 3. Verify in a local browser
 
@@ -36,4 +36,4 @@ Browser interaction may inspect pages and follow safe links within scope. Get ex
 - Apply ADHD-friendly clarity to every Markdown document and section: lead with the action or result, use short paragraphs and descriptive headings, number sequential steps, and keep each visible list to five items where possible. Preserve necessary technical detail and policy force. Write standalone prose and remove filler.
 - Finish with scoped validation and an independent diff review. Use Conventional Commits; docs-, tests-, and agent-only commits require `[skip ci]`.
 - Skip local and hosted CodeRabbit for prose-only PRs; include a standalone `@coderabbitai ignore` in the PR body. For executable changes, follow applicable CodeRabbit instructions and resolve blockers before creating a PR; add a success marker only after a successful review with no unresolved blockers, and record verification.
-- Push, PR creation or updates, merges, deployments, and DNS changes require explicit authorization. Preserve `CNAME` and `.nojekyll` unless the task changes publishing configuration. Distinguish local, Preview, and Production evidence. Validate locally before any authorized push.
+- Push, PR creation or updates, merges, deployments, and DNS changes require explicit authorization. Preserve `CNAME` and `.nojekyll` unless the task changes publishing configuration. Pages was verified on November 5, 2026 to publish `main` from `/`; pushing to `main` publishes the site. Recheck [Pages settings](https://github.com/droxey/phoneology-web/settings/pages) before publishing. Distinguish local, Preview, and Production evidence. Validate locally before any authorized push.
