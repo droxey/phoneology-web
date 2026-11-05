@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delete data — Phoneology</title>
-  <link rel="canonical" href="https://phoneology.app/delete-data">
+  <link rel="canonical" href="https://phoneology.app/delete-data/">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
@@ -13,16 +13,18 @@
     <a class="wordmark" href="/"><span class="brand-dot" aria-hidden="true"></span>Phoneology</a>
     <nav class="nav-links" aria-label="Main navigation">
           <a href="/">Home</a>
-          <a href="/support">Support</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
+          <a href="/support/">Support</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/delete-data/" aria-current="page">Delete data</a>
     </nav>
   </header>
   <main id="main">
     <article class="article">
       <div class="article-header">
         <h1>Delete data</h1>
-        <div class="holding-notice"><p><strong>Development version.</strong> This page describes Phoneology’s current development build. It will be reviewed before the app is released.</p></div>
+        <div class="holding-notice"><p><strong>Development version.</strong> This guide describes the current development build. Account, purchase, and sync behavior is still being finalized before release.</p></div>
+        <p>Last updated: November 5, 2026.</p>
 
       </div>
       <p>Phoneology’s current build stores app data on your device, with optional iCloud sync. Use the controls below to remove data from the app.</p>
@@ -36,17 +38,19 @@
       <h2>Understand the limits</h2>
       <p>With sync enabled, deletion may propagate to iCloud, or remote records may be imported later. Turning sync off takes effect on the next app launch, retains existing copies, and does not erase other devices. Local deletion does not guarantee complete cloud erasure or recovery.</p>
       <p>App Store purchases, backups, and files you exported are unchanged. Remove those copies separately where the relevant service provides that control.</p>
-      <h2>About account deletion</h2>
-      <p>Phoneology does not provide a separate developer account or a developer-operated account database to delete. Your Apple Account and iCloud are managed by Apple.</p>
+      <h2>Account and purchase records</h2>
+      <p>The account and per-number purchase features are still in development. Removing local app data does not delete your Apple Account, remove Apple’s purchase records, or request a refund. We will document the account controls and their effects before those features are released.</p>
+      <h2>Need help?</h2>
+      <p>Email <a href="mailto:support@phoneology.app">support@phoneology.app</a> for a private deletion request or if a removal control fails. Describe the problem and your app version. Do not include a full phone number, birthdate, password, verification code, or receipt in a public GitHub issue.</p>
     </article>
   </main>
   <footer class="site-footer shell">
     <p>Phoneology · In development</p>
     <nav class="nav-links" aria-label="Footer navigation">
-          <a href="/support">Support</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="/delete-data" aria-current="page">Delete data</a>
+          <a href="/support/">Support</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/delete-data/" aria-current="page">Delete data</a>
     </nav>
   </footer>
 </body>
