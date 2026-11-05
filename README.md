@@ -19,7 +19,7 @@ Run the site from the repository root with Python 3. Allow about two minutes for
    python3 -m http.server 8000 --bind 127.0.0.1
    ```
 
-2. Open <http://127.0.0.1:8000/> in your browser. Serving from the root lets the site’s root-relative navigation and stylesheet paths resolve.
+2. Open <http://127.0.0.1:8000/> in your browser. Serving from the root lets the site’s root-relative navigation and stylesheet paths resolve. Opening an HTML file directly does not provide that root.
 3. Stop the server with **Ctrl+C** when finished.
 
 **Done:** the home page has styling, and its navigation opens the other pages.
@@ -40,7 +40,7 @@ Edit the page for your route or the shared stylesheet for visual changes.
 | Intended custom domain | [CNAME](CNAME) |
 | Disable Jekyll processing on GitHub Pages | [.nojekyll](.nojekyll) |
 
-Navigation and footers are repeated in each HTML file. Check every page when changing shared links, including the error page. Preserve page titles, canonical URLs, heading order, the skip link, and the current-page navigation label.
+Navigation and footers are repeated in each HTML file. Check every page when changing shared links, including the error page. Preserve page titles, canonical URLs, heading order, the skip link, and the current-page navigation label (`aria-current="page"`).
 
 **Done:** the intended page changes, and shared navigation still works throughout the site.
 
@@ -50,7 +50,7 @@ Check the current app implementation before changing statements about privacy, s
 
 1. Read the relevant source in the [Phoneology app repository](https://github.com/droxey/phoneology), available locally at `/Users/droxey/dev/repos/phoneology`.
 2. Separate what the source implements from behavior verified on a device. Sync and deletion claims need particular care because local behavior does not prove remote erasure.
-3. Update affected pages together so support, privacy, terms, and deletion guidance agree. Keep development limitations visible until release behavior is verified.
+3. Update affected pages together so support, privacy, terms, and deletion guidance agree. Keep development limitations visible until release behavior is verified. Change policy revision dates only when the policy changes substantively; leave dates alone for formatting or navigation fixes.
 
 Website checks do not verify app behavior, App Store availability, or legal sufficiency. Publish release dates, pricing, or guarantees only with supporting evidence. App edits require separate authorization.
 
@@ -62,8 +62,14 @@ Run the local preview and review the changed pages in a browser. A small copy ch
 
 1. Open `/`, `/support/`, `/privacy/`, `/terms/`, `/delete-data/`, and `/404.html`. Confirm the stylesheet loads and follow navigation and changed links.
 2. Check a narrow phone-sized viewport and a desktop viewport. Look for overflow, clipped text, and readable spacing; check text at 200% zoom when layout or typography changes.
-3. Use the keyboard to reach the skip link and navigation. Check visible focus, descriptive link text, one main heading, and a sensible heading order.
-4. Run the whitespace check:
+3. Use the keyboard to reach the skip link and navigation. Check that the skip link reaches the main content, focus is visible, link text is descriptive, there is one main heading, and heading order is sensible. Confirm each content page marks its own navigation link as current; the 404 page has no current route.
+4. With the server running, smoke-check the routes and shared CSS, then check whitespace:
+
+   ```sh
+   for route in / /support/ /privacy/ /terms/ /delete-data/ /404.html /assets/styles.css; do
+     curl --fail --silent --output /dev/null "http://127.0.0.1:8000$route" || exit 1
+   done
+   ```
 
    ```sh
    git diff --check
@@ -89,7 +95,7 @@ Read [AGENTS.md](AGENTS.md) before proposing a change, or use the support channe
 
 Open the [repository’s GitHub Pages settings](https://github.com/droxey/phoneology-web/settings/pages) before changing deployment configuration or publishing.
 
-The source contains `CNAME` with `phoneology.app`, `.nojekyll`, and canonical URLs under <https://phoneology.app/>. The privacy page describes GitHub Pages hosting. These files do not establish the current publishing branch, folder, build source, DNS records, or HTTPS settings.
+The source contains `CNAME` with `phoneology.app`, `.nojekyll`, and canonical URLs under <https://phoneology.app/>. The privacy page describes GitHub Pages hosting. On November 5, 2026, Pages settings were verified to publish from the `main` branch at the repository root (`/`), with the custom domain and HTTPS enabled. Pushing to `main` publishes the site. Recheck the settings before publishing; repository files alone do not prove the current configuration or DNS records.
 
 1. Verify the configured Pages source, published revision, custom domain, and HTTPS status in GitHub. Check DNS separately if changing the domain.
 2. Confirm authorization before pushing, merging, or changing hosting settings. Use a descriptive feature or fix branch and an independently reviewed diff.
